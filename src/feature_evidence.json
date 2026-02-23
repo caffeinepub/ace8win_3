@@ -1,0 +1,29 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-frontend-navigation-and-routing-to-conditionally-show-admin-links-only-to-users-with-admin-role",
+      "featureTitle": "Update frontend navigation and routing to conditionally show admin links only to users with admin role",
+      "files": [
+        "frontend/src/components/AccessDeniedScreen.tsx",
+        "frontend/src/pages/AdminMatchCreate.tsx",
+        "frontend/src/pages/AdminMatchParticipants.tsx",
+        "frontend/src/pages/AdminPayments.tsx",
+        "frontend/src/pages/AdminUserManagement.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

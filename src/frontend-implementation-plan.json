@@ -1,0 +1,70 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Grant first registered user admin role and enable open user registration",
+  "requirements": [
+    {
+      "id": "REQ-15",
+      "summary": "Enable open registration for all other users without admin privileges",
+      "acceptanceCriteria": [
+        "Non-admin users can complete registration flow",
+        "Non-admin users can access user dashboard and matches",
+        "Non-admin users cannot access admin-only pages",
+        "Registration process remains unchanged for subsequent users"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/RegistrationModal.tsx",
+          "operation": "modify",
+          "description": "Verify the authorization component's usage instructions before implementing. Ensure the registration modal continues to collect game UID, game name, phone number, and refund QR code for all users. The backend will automatically assign admin role to the first user and regular user role to subsequent users. No frontend logic changes needed for role assignment."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Update frontend navigation and routing to conditionally show admin links only to users with admin role",
+      "acceptanceCriteria": [
+        "Admin navigation links visible only to admin users",
+        "Non-admin users see only user-facing navigation options",
+        "Admin pages remain protected with role-based access control"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Use the authorization component to support role-based navigation visibility. Verify the component's usage instructions before implementing. Add a query to fetch the current user's role using the backend's isCallerAdmin() method. Conditionally render admin navigation links (Match Management, Payment Approvals, User Management) only when isCallerAdmin() returns true. Non-admin users should only see user-facing links (Dashboard, Payments, Transactions). Ensure the role check handles loading states appropriately to prevent UI flicker."
+        },
+        {
+          "path": "frontend/src/pages/AdminMatchCreate.tsx",
+          "operation": "modify",
+          "description": "Use the authorization component to support admin-only access protection. Verify the component's usage instructions before implementing. Add a role check using isCallerAdmin() at the component level. If the user is not an admin, display an AccessDeniedScreen component or redirect to the user dashboard. Ensure the check happens after authentication is confirmed to prevent unnecessary error states."
+        },
+        {
+          "path": "frontend/src/pages/AdminPayments.tsx",
+          "operation": "modify",
+          "description": "Use the authorization component to support admin-only access protection. Verify the component's usage instructions before implementing. Add a role check using isCallerAdmin() at the component level. If the user is not an admin, display an AccessDeniedScreen component or redirect to the user dashboard. Ensure the check happens after authentication is confirmed."
+        },
+        {
+          "path": "frontend/src/pages/AdminMatchParticipants.tsx",
+          "operation": "modify",
+          "description": "Use the authorization component to support admin-only access protection. Verify the component's usage instructions before implementing. Add a role check using isCallerAdmin() at the component level. If the user is not an admin, display an AccessDeniedScreen component or redirect to the user dashboard. Ensure the check happens after authentication is confirmed."
+        },
+        {
+          "path": "frontend/src/pages/AdminUserManagement.tsx",
+          "operation": "modify",
+          "description": "Use the authorization component to support admin-only access protection. Verify the component's usage instructions before implementing. Add a role check using isCallerAdmin() at the component level. If the user is not an admin, display an AccessDeniedScreen component or redirect to the user dashboard. Ensure the check happens after authentication is confirmed."
+        },
+        {
+          "path": "frontend/src/components/AccessDeniedScreen.tsx",
+          "operation": "create",
+          "description": "Create a reusable component that displays an access denied message for users attempting to access admin-only pages without proper authorization. Include a message explaining that admin access is required and provide a button to navigate back to the user dashboard. Style the component consistently with the gaming theme."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add a custom React Query hook useIsCallerAdmin() that fetches the current user's admin status using the backend's isCallerAdmin() method. Configure the query to be enabled only when the actor is available and the user is authenticated. Return isAdmin boolean along with loading and error states. This hook will be used by navigation and admin page components to conditionally render UI elements based on role."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "ACE8WIN - A gaming matchmaking platform where admins create 1vs1 matches with configurable timing. Users register with game UID, game name, phone number, and refund QR code, then join matches by paying via UPI to 'ace8zonereal@ptyes' with auto-generated QR codes. Users upload payment proof for admin approval/rejection. Features include transaction history with refund tracking, duplicate join prevention, admin controls to view joined players, WhatsApp messaging integration, and account management. Mobile-optimized with gaming aesthetic.",
+  "architectural_notes": [
+    "UPI payment integration with fixed ID 'ace8zonereal@ptyes'",
+    "QR code generation for payment amounts",
+    "Payment proof image upload and storage",
+    "Admin approval workflow for payment verification",
+    "User profile includes: game UID, game name, phone number, refund QR code",
+    "WhatsApp integration for admin-to-user messaging",
+    "Transaction and refund tracking system",
+    "Duplicate join detection mechanism",
+    "Role-based access: first account is admin, subsequent are users",
+    "Mobile-first responsive design with gaming theme"
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-implement-user-registration-flow-requiring-game-uid-game-name-phone-number-for-whatsapp-messages-and-refund-qr-code-upload-during-first-login",
+      "title": "Implement user registration flow requiring game UID, game name, phone number for WhatsApp messages, and refund QR code upload during first login",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-interface-to-create-1vs1-matches-with-configurable-timing-that-appears-in-real-time-on-user-accounts",
+      "title": "Create admin interface to create 1vs1 matches with configurable timing that appears in real-time on user accounts",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-upi-payment-flow-where-users-select-a-match-view-amount-and-upi-id-ace8zonereal-ptyes-and-see-an-auto-generated-qr-code-for-the-selected-match-amount",
+      "title": "Implement UPI payment flow where users select a match, view amount and UPI ID 'ace8zonereal@ptyes', and see an auto-generated QR code for the selected match amount",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enable-users-to-upload-payment-proof-screenshot-with-waiting-status-until-admin-confirms-or-rejects-the-payment",
+      "title": "Enable users to upload payment proof screenshot with waiting status until admin confirms or rejects the payment",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-admin-interface-to-view-all-payment-submissions-and-approve-or-reject-each-payment-with-status-updates-visible-to-users",
+      "title": "Build admin interface to view all payment submissions and approve or reject each payment with status updates visible to users",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-warning-to-users-attempting-to-join-a-match-they-have-already-joined-with-option-to-proceed-or-cancel",
+      "title": "Display warning to users attempting to join a match they have already joined, with option to proceed or cancel",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-transaction-history-page-showing-all-user-transactions-with-payment-status-and-refund-tracking",
+      "title": "Create transaction history page showing all user transactions with payment status and refund tracking",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-admin-capability-to-view-list-of-joined-player-ids-for-each-match-with-their-registration-details",
+      "title": "Add admin capability to view list of joined player IDs for each match with their registration details",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-direct-whatsapp-messaging-feature-from-admin-page-allowing-admin-to-message-users-at-their-registered-phone-numbers",
+      "title": "Implement direct WhatsApp messaging feature from admin page allowing admin to message users at their registered phone numbers",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enable-admin-to-modify-user-account-details-game-uid-game-name-phone-number-refund-qr-and-delete-user-accounts-entirely",
+      "title": "Enable admin to modify user account details (game UID, game name, phone number, refund QR) and delete user accounts entirely",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-mobile-optimized-user-interface-with-gaming-aesthetic-featuring-dark-colors-neon-accents-bold-typography-and-card-based-layouts-suitable-for-competitive-gaming-platform",
+      "title": "Design mobile-optimized user interface with gaming aesthetic featuring dark colors, neon accents, bold typography, and card-based layouts suitable for competitive gaming platform",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-frontend-navigation-and-routing-to-conditionally-show-admin-links-only-to-users-with-admin-role",
+      "title": "Update frontend navigation and routing to conditionally show admin links only to users with admin role",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Admin match creation with 1vs1 format and real-time timing selection",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "User registration with game UID, game name, phone number, and refund QR code upload",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "UPI payment flow with auto-generated QR codes to 'ace8zonereal@ptyes'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Payment proof upload with waiting status and admin approval/rejection interface",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Duplicate join prevention warning for users already in a match",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Transaction history display with refund tracking for users",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Admin page to view joined player IDs and WhatsApp direct messaging",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Admin account modification and deletion capabilities",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Mobile-optimized design with gaming aesthetic",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "First account login grants admin page access",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Grant first registered account automatic admin access to admin page",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Automatically grant admin role to the first user who registers in the system",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Grant all admin role access and permissions to the first registered user",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Enable open registration for all other users without admin privileges",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "ACE8WIN",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,99 @@
+{
+  "kind": "build_request",
+  "title": "Grant first registered user admin role and enable open user registration",
+  "projectName": "ACE8WIN",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "text": "Automatically grant admin role to the first user who registers in the system",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "make first user admin"
+        ]
+      },
+      "acceptanceCriteria": [
+        "First registered user receives admin role automatically",
+        "Admin role is assigned during registration without manual intervention",
+        "Subsequent users do not automatically receive admin role"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Grant all admin role access and permissions to the first registered user",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "allow to all admin rol access"
+        ]
+      },
+      "acceptanceCriteria": [
+        "First user has full access to admin dashboard",
+        "First user can create matches",
+        "First user can approve/reject payments",
+        "First user can manage all user accounts",
+        "First user can view all match participants",
+        "First user can send WhatsApp messages to users"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Enable open registration for all other users without admin privileges",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "allow other users to register"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Non-admin users can complete registration flow",
+        "Non-admin users can access user dashboard and matches",
+        "Non-admin users cannot access admin-only pages",
+        "Registration process remains unchanged for subsequent users"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Update frontend navigation and routing to conditionally show admin links only to users with admin role",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-latest"
+        ],
+        "quotes": [
+          "allow to all admin rol access"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin navigation links visible only to admin users",
+        "Non-admin users see only user-facing navigation options",
+        "Admin pages remain protected with role-based access control"
+      ]
+    }
+  ],
+  "constraints": [
+    "Preserve existing role-based access control system in backend/main.mo",
+    "Do not change user registration flow for game UID, game name, phone number, and refund QR code",
+    "Maintain existing admin capabilities (match creation, payment approval, user management, WhatsApp messaging)"
+  ],
+  "nonGoals": [
+    "Multiple admin accounts or admin promotion system",
+    "Custom admin privileges or permission levels",
+    "Admin invitation or approval workflows",
+    "Changes to payment processing or match management logic"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

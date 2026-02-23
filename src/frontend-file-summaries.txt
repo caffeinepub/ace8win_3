@@ -1,0 +1,20 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, RootLayout component for handling registration modal and layout, route definitions for user and admin pages, and theme provider wrapper.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for all backend operations including user registration, match management, payment submission, transaction history, and admin functions with proper state invalidation and identity management via useInternetIdentity hook.",
+  "frontend/src/components/Layout.tsx": "Main layout component with responsive header navigation, mobile menu, authentication controls, hero background, and footer with caffeine.ai attribution.",
+  "frontend/src/components/RegistrationModal.tsx": "Modal dialog for first-time user registration requiring game UID, game name, phone number, and refund QR code upload with validation and progress tracking.",
+  "frontend/src/pages/UserDashboard.tsx": "User dashboard displaying available live and upcoming 1vs1 matches with real-time polling and authentication checks.",
+  "frontend/src/components/MatchCard.tsx": "Match card component showing match details, entry fee, participant count, and join button with duplicate join detection.",
+  "frontend/src/components/DuplicateJoinWarning.tsx": "Alert dialog warning users when attempting to join a match they've already registered for with proceed/cancel options.",
+  "frontend/src/pages/PaymentPage.tsx": "Payment page displaying UPI payment details with QR code component, payment instructions, and payment proof upload form with submission tracking and progress indication.",
+  "frontend/src/pages/TransactionHistory.tsx": "Transaction history page showing user's payment submissions with status badges and refund tracking.",
+  "frontend/src/pages/AdminMatchCreate.tsx": "Admin-only page for creating new 1vs1 matches with timing, duration, and entry fee configuration, now using the AccessDeniedScreen component for consistent access control.",
+  "frontend/src/pages/AdminPayments.tsx": "Admin payment management page listing all matches with navigation to participant details, now using the AccessDeniedScreen component for consistent access control.",
+  "frontend/src/pages/AdminMatchParticipants.tsx": "Admin page displaying match participants with game details and WhatsApp messaging integration, now using the AccessDeniedScreen component for consistent access control.",
+  "frontend/src/pages/AdminUserManagement.tsx": "Admin user management page with search functionality, user listing, WhatsApp contact, and account deletion, now using the AccessDeniedScreen component for consistent access control.",
+  "frontend/src/components/UserDeleteConfirmation.tsx": "Alert dialog for confirming permanent user account deletion with loading state.",
+  "frontend/src/index.css": "Global styles with dark gaming aesthetic, OKLCH color system, neon accent colors (cyan, purple, green), and custom gaming card utilities with proper opacity handling for Tailwind CSS compatibility.",
+  "frontend/tailwind.config.js": "Tailwind configuration with gaming color palette, neon accent colors, custom shadows, and extended theme for dark competitive gaming aesthetic.",
+  "frontend/src/components/UpiQrCode.tsx": "UPI QR code component that generates a scannable QR code for UPI payments using a third-party QR code generation API with the payment amount and UPI ID encoded.",
+  "frontend/src/components/AccessDeniedScreen.tsx": "Reusable component displaying an access denied message with a shield alert icon and navigation button back to the dashboard for users attempting to access admin-only pages without proper authorization."
+}

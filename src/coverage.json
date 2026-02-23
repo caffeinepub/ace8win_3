@@ -1,0 +1,80 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-23T09:35:00.097Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-13",
+        "summary": "Automatically grant admin role to the first user who registers in the system",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Grant all admin role access and permissions to the first registered user",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Enable open registration for all other users without admin privileges",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/components/RegistrationModal.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Update frontend navigation and routing to conditionally show admin links only to users with admin role",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Layout.tsx",
+          "frontend/src/pages/AdminMatchCreate.tsx",
+          "frontend/src/pages/AdminPayments.tsx",
+          "frontend/src/pages/AdminMatchParticipants.tsx",
+          "frontend/src/pages/AdminUserManagement.tsx",
+          "frontend/src/components/AccessDeniedScreen.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/AdminMatchCreate.tsx",
+          "frontend/src/pages/AdminPayments.tsx",
+          "frontend/src/pages/AdminMatchParticipants.tsx",
+          "frontend/src/pages/AdminUserManagement.tsx",
+          "frontend/src/components/AccessDeniedScreen.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/AccessDeniedScreen.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/pages/AdminMatchCreate.tsx",
+    "frontend/src/pages/AdminMatchParticipants.tsx",
+    "frontend/src/pages/AdminPayments.tsx",
+    "frontend/src/pages/AdminUserManagement.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
